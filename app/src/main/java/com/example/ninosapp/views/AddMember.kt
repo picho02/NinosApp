@@ -118,7 +118,7 @@ class AddMember : AppCompatActivity() {
 
     fun click(view: View) {
         when (view.id) {
-            R.id.btnLostPetOwner -> {
+            R.id.btnAdopt -> {
                 if (validaCampo()) {
                     if (spinnerGenderPosition == "") {
                         Toast.makeText(this, getString(R.string.error_spgender), Toast.LENGTH_LONG)

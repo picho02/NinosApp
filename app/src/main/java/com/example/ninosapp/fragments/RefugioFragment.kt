@@ -1,5 +1,6 @@
 package com.example.ninosapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +10,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.ninosapp.R
 import com.example.ninosapp.adapter.AdoptAdapter
 import com.example.ninosapp.model.Pet
+import com.example.ninosapp.views.AdoptableDetail
 import com.example.ninosapp.views.MainActivity
+import com.example.ninosapp.views.PetDetail
 import kotlinx.android.synthetic.main.fragment_refugio.*
 
-class RefugioFragment : Fragment(R.layout.fragment_refugio) {
+class RefugioFragment : Fragment(), AdoptAdapter.OnItemListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,10 +34,18 @@ class RefugioFragment : Fragment(R.layout.fragment_refugio) {
             val petTmp = Pet(i,"Mascota $i",i,"macho","raza $i","si","Dueño $i","talla $i")
             datos.add(petTmp)
         }
-        val adapter = AdoptAdapter(datos)
+        val adapter = AdoptAdapter(datos,this)
         val gridLayout = GridLayoutManager(requireContext(),2)
         rvAdopt.layoutManager =gridLayout
         rvAdopt.adapter = adapter
+    }
+
+    override fun onItemClick(pet: Pet) {
+        val intent = Intent(requireContext(), AdoptableDetail::class.java)
+        val parametros = Bundle()
+        parametros.putSerializable("pet",pet)
+        intent.putExtras(parametros)
+        startActivity(intent)
     }
 
 }

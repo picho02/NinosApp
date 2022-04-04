@@ -9,20 +9,21 @@
     tools:context=".views.AdoptableDetail">
 
     <ImageButton
-        android:id="@+id/ibBackPetDetail"
+        android:id="@+id/ibBackAdoptDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:backgroundTint="#02FFFFFF"
         android:foregroundTint="#EEFFFFFF"
+        android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
         app:tint="#000000" />
 
     <TextView
-        android:id="@+id/tvPetDetailName"
+        android:id="@+id/tvPetAdoptableName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -30,7 +31,7 @@
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="@dimen/h4"
-        app:layout_constraintStart_toEndOf="@+id/ibBackPetDetail"
+        app:layout_constraintStart_toEndOf="@+id/ibBackAdoptDetail"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Nombre" />
 
@@ -42,7 +43,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPetDetailName">
+        app:layout_constraintTop_toBottomOf="@+id/tvPetAdoptableName">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,45 +67,117 @@
                 android:backgroundTint="@color/secundary_color"
                 app:cardCornerRadius="15dp">
 
-                <TextView
-                    android:id="@+id/tvLabelBrench"
-                    android:layout_width="wrap_content"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/pet_brench"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/b1" />
+                    android:layout_marginStart="8dp">
 
-                <TextView
-                    android:id="@+id/tvPetDetailBrench"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="Raza de la mascota"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/b1" />
+                    <TextView
+                        android:id="@+id/tvLabelBrench"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pet_brench"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvLabelGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="40dp"
-                    android:text="@string/pet_genger"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/b1" />
+                    <TextView
+                        android:id="@+id/tvPetAdoptableBrench"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="8dp"
+                        android:hint="Raza de la mascota"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tvLabelBrench"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/tvPetDetailGender"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="65dp"
-                    android:layout_marginTop="40dp"
-                    android:hint="Genero mascota"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/b1" />
+                    <TextView
+                        android:id="@+id/tvPetAdoptableTalla"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="Raza de la mascota"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvLabelTalla"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/talla"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPetAdoptableTalla"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:layout_marginStart="8dp">
+
+    <TextView
+        android:id="@+id/tvLabelGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pet_genger"
+        android:textColor="@color/white"
+        android:textSize="@dimen/b1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPetAdoptableGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:hint="Genero mascota"
+        android:textColor="@color/white"
+        android:textSize="@dimen/b1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelGender"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvLabelPetAdoptableOwner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/owner"
+        android:textColor="@color/white"
+        android:textSize="@dimen/b1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvPetAdoptableGender"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvPetAdoptableOwner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:hint="Dueño"
+        android:textColor="@color/white"
+        android:textSize="@dimen/b1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLabelPetAdoptableOwner"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 
                 <TextView
                     android:id="@+id/tvLabelEsteril"
@@ -117,7 +190,7 @@
                     android:textSize="@dimen/b1" />
 
                 <TextView
-                    android:id="@+id/tvPetDetailEsteril"
+                    android:id="@+id/tvPetAdoptableEsteril"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="96dp"
@@ -132,17 +205,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="101dp"
-                    android:text="Fecha de nacimiento:"
+                    android:text="@string/age"
                     android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
-                    android:id="@+id/tvPetDetailBirthday"
+                    android:id="@+id/tvPetAdoptableAge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="162dp"
+                    android:layout_marginStart="55dp"
                     android:layout_marginTop="101dp"
-                    android:hint="Genero mascota"
+                    android:hint="Edad"
                     android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
@@ -169,12 +242,13 @@
                 android:textSize="@dimen/b1" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLostPetOwner"
+                android:id="@+id/btnAdopt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
+                android:onClick="click"
                 android:text="@string/btn_adopt"
                 android:textAllCaps="false"
                 android:textSize="20sp"

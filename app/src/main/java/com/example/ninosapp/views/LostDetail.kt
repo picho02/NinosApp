@@ -7,9 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.example.ninosapp.R
 import com.example.ninosapp.databinding.ActivityLostDetailBinding
-import com.example.ninosapp.db.DBPets
 import com.example.ninosapp.model.Pet
-import kotlinx.android.synthetic.main.sos_element.*
 
 class LostDetail : AppCompatActivity() {
     lateinit var binding: ActivityLostDetailBinding
@@ -34,12 +32,12 @@ class LostDetail : AppCompatActivity() {
     fun click(view: View) {
         when (view.id) {
 
-            R.id.ibBackPetDetail -> {
+            R.id.ibBackAdoptDetail -> {
                 intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             }
-            R.id.btnLostPetOwner -> {
+            R.id.btnAdopt -> {
                 Toast.makeText(this,"Aqui se pondra una forma de contacto",Toast.LENGTH_LONG).show()
             }
 

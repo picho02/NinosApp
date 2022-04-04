@@ -70,7 +70,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etAge"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:inputType="number">
 
         </com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
@@ -143,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/spEsteril" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLostPetOwner"
+        android:id="@+id/btnAdopt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -178,7 +179,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLostPetOwner">
+        app:layout_constraintTop_toBottomOf="@+id/btnAdopt">
 
     </com.google.android.material.button.MaterialButton>
 </androidx.constraintlayout.widget.ConstraintLayout>

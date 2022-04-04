@@ -1,12 +1,9 @@
 package com.example.ninosapp.views
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import com.example.ninosapp.R
 import com.example.ninosapp.databinding.ActivityPetDetailBinding
 import com.example.ninosapp.db.DBPets
@@ -43,7 +40,7 @@ class PetDetail : AppCompatActivity() {
     }
     fun click(view: View) {
         when(view.id){
-            R.id.ibBackPetDetail->{
+            R.id.ibBackAdoptDetail->{
                 startActivity(Intent(this,MainActivity::class.java))
                 finish()
             }

@@ -9,7 +9,7 @@
     tools:context=".views.PetDetail">
 
     <ImageButton
-        android:id="@+id/ibBackPetDetail"
+        android:id="@+id/ibBackAdoptDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -30,7 +30,7 @@
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="@dimen/h4"
-        app:layout_constraintStart_toEndOf="@+id/ibBackPetDetail"
+        app:layout_constraintStart_toEndOf="@+id/ibBackAdoptDetail"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Nombre" />
 
