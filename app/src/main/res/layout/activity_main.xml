@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_blue"
+    android:backgroundTint="@color/background_color_blue"
     tools:context=".views.MainActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/containerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:background="@color/background_color_blue"
+        android:backgroundTint="@color/background_color_blue"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,6 +23,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="56dp"
+        android:background="@color/principal_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

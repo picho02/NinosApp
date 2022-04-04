@@ -28,7 +28,7 @@ class RefugioFragment : Fragment(R.layout.fragment_refugio) {
         super.onViewCreated(view, savedInstanceState)
         val datos = ArrayList<Pet>()
         for (i in 1 until 20){
-            val petTmp = Pet(i,"Mascota $i",i,"macho","raza $i","si","Dueño $i")
+            val petTmp = Pet(i,"Mascota $i",i,"macho","raza $i","si","Dueño $i","talla $i")
             datos.add(petTmp)
         }
         val adapter = AdoptAdapter(datos)

@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_blue"
+    android:onClick="click"
     tools:context=".views.LostDetail">
 
     <ImageButton
@@ -12,16 +14,21 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:backgroundTint="#00FFFFFF"
+        android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/black" />
 
     <TextView
-        android:id="@+id/tvPetDetailName"
+        android:id="@+id/tvLostPetDetailName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
         android:textSize="@dimen/h4"
         app:layout_constraintStart_toEndOf="@+id/ibBackPetDetail"
         app:layout_constraintTop_toTopOf="parent"
@@ -35,7 +42,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPetDetailName">
+        app:layout_constraintTop_toBottomOf="@+id/tvLostPetDetailName">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,7 +54,8 @@
                 android:layout_height="175dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/logo_ninos_sfondo" />
+                android:scaleType="fitXY"
+                android:src="@drawable/perrito2" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -55,25 +63,55 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/secundary_color"
                 app:cardCornerRadius="15dp">
 
-                <TextView
-                    android:id="@+id/tvLabelBrench"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="10dp"
-                    android:text="@string/pet_brench"
-                    android:textSize="@dimen/b1" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/tvPetDetailBrench"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="10dp"
-                    android:hint="Raza de la mascota"
-                    android:textSize="@dimen/b1" />
+                    <TextView
+                        android:id="@+id/tvLabelBrench"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pet_brench"
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1" />
+
+                    <TextView
+                        android:id="@+id/tvLostPetDetailBrench"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:hint="Raza de la mascota"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1" />
+
+                    <TextView
+                        android:id="@+id/tvLabelTalla"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/pet_brench"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1" />
+
+                    <TextView
+                        android:id="@+id/tvLostPetDetailTalla"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:hint="Talla"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/b1" />
+
+                </LinearLayout>
+
 
                 <TextView
                     android:id="@+id/tvLabelGender"
@@ -82,15 +120,17 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="40dp"
                     android:text="@string/pet_genger"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
-                    android:id="@+id/tvPetDetailGender"
+                    android:id="@+id/tvLostPetDetailGender"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="65dp"
                     android:layout_marginTop="40dp"
                     android:hint="Genero mascota"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -100,33 +140,37 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="71dp"
                     android:text="@string/pet_esterilizado"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
-                    android:id="@+id/tvPetDetailEsteril"
+                    android:id="@+id/tvLostPetDetailEsteril"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="96dp"
                     android:layout_marginTop="71dp"
                     android:hint="Esta estelirizado"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
-                    android:id="@+id/tvLabelBirthday"
+                    android:id="@+id/tvLabelExtravio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="101dp"
-                    android:text="Fecha de nacimiento:"
+                    android:text="Fecha de Extravio:"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
-                    android:id="@+id/tvPetDetailBirthday"
+                    android:id="@+id/tvLostPetDetailBirthday"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="162dp"
                     android:layout_marginTop="101dp"
-                    android:hint="Genero mascota"
+                    android:hint="Fecha de extravio"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
             </androidx.cardview.widget.CardView>
@@ -138,6 +182,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/more_details"
+                android:textColor="@color/black"
                 android:textSize="@dimen/h5" />
 
             <TextView
@@ -147,15 +192,18 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="8dp"
                 android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                android:textColor="@color/black"
                 android:textSize="@dimen/b1" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnAddPet"
+                android:id="@+id/btnLostPetOwner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/btn_cancel"
+                android:onClick="click"
                 android:text="@string/btn_owner_contact"
                 android:textAllCaps="false"
                 android:textSize="20sp"

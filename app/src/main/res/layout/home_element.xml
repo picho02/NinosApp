@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/secundary_color">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -32,14 +33,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="70dp" />
+            app:layout_constraintGuide_percent="0.5" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="120dp" />
+            app:layout_constraintGuide_percent="0.9" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline7"
@@ -50,25 +51,23 @@
 
         <ImageView
             android:id="@+id/ivHomeElement"
-            android:layout_width="111dp"
-            android:layout_height="111dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="23dp"
+            android:layout_width="104dp"
+            android:layout_height="65dp"
 
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toStartOf="@+id/guideline7"
-            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintHorizontal_bias="0.51"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
-            app:srcCompat="@drawable/logo_ninos_sfondo" />
+            app:srcCompat="@drawable/perrito" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="140dp" />
+            app:layout_constraintGuide_begin="89dp" />
 
         <TextView
             android:id="@+id/tvHomeName"
@@ -76,13 +75,13 @@
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
             android:gravity="bottom"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
-            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            app:layout_constraintTop_toTopOf="@+id/guideline2"
             tools:text="Nombre" />
 
         <TextView
@@ -91,7 +90,7 @@
             android:layout_height="0dp"
             android:layout_marginStart="10dp"
             android:gravity="center_vertical"
-            android:textColor="?attr/colorSecondary"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline5"
             app:layout_constraintEnd_toEndOf="parent"

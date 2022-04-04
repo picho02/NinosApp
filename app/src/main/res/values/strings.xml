@@ -33,8 +33,17 @@
         <item>Si</item>
         <item>No</item>
     </string-array>
+    <string-array name="talla_array">
+        <item>Seleccione una talla</item>
+        <item>Mini</item>
+        <item>Chica</item>
+        <item>Mediana</item>
+        <item>Grande</item>
+        <item>Extra Grande</item>
+    </string-array>
     <string name="valor_requerido">Ingrese un valor</string>
     <string name="error_spgender">Seleccione un genero</string>
+    <string name="error_sptalla">Seleccione una talla</string>
     <string name="error_spesteril">Seleccione si esta esterilizado</string>
     <string name="guardado">Se guardo con exito</string>
     <string name="Error">Algo salio mal</string>

@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper
 open class DBHelper(
     context: Context?) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(p0: SQLiteDatabase?) {
-        p0?.execSQL("CREATE TABLE $TABLE_PETS (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL,age INTEGER NOT NULL,gender INTEGER NOT NULL,brench TEXT NOT NULL,esteril TEXT NOT NULL,owner TEXT NOT NULL)")
+        p0?.execSQL("CREATE TABLE $TABLE_PETS (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL,age INTEGER NOT NULL,gender INTEGER NOT NULL,brench TEXT NOT NULL,esteril TEXT NOT NULL,owner TEXT NOT NULL,talla TEXT NOT NULL)")
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {

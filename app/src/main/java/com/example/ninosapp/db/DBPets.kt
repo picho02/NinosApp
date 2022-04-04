@@ -9,7 +9,7 @@ class DBPets (context: Context) : DBHelper(context) {
     //Aqui va el codigo para el crud
     val context = context
 
-    fun insertPet(name: String, age: Int, gender: String,brench:String,esteril: String,owner: String): Long {
+    fun insertPet(name: String, age: Int, gender: String,brench:String,esteril: String,owner: String,talla: String): Long {
         val dbHelper = DBHelper(context)
         val db = dbHelper.writableDatabase
         var id: Long = 0
@@ -21,6 +21,7 @@ class DBPets (context: Context) : DBHelper(context) {
             values.put("brench",brench)
             values.put("esteril",esteril)
             values.put("owner",owner)
+            values.put("talla",talla)
 
             id = db.insert(TABLE_PETS, null, values)
         } catch (e: Exception) {
@@ -51,7 +52,8 @@ class DBPets (context: Context) : DBHelper(context) {
                     cursorPets.getString(3),
                     cursorPets.getString(4),
                     cursorPets.getString(5),
-                    cursorPets.getString(6)
+                    cursorPets.getString(6),
+                    cursorPets.getString(7)
                 )
                 listPets.add(petTmp)
             } while (cursorPets.moveToNext())
@@ -78,7 +80,8 @@ class DBPets (context: Context) : DBHelper(context) {
                 cursorPets.getString(3),
                 cursorPets.getString(4),
                 cursorPets.getString(5),
-                cursorPets.getString(6)
+                cursorPets.getString(6),
+                cursorPets.getString(7)
             )
         }
 
@@ -88,12 +91,12 @@ class DBPets (context: Context) : DBHelper(context) {
 
     }
 
-    fun updatePet(id: Int,name: String, age: Int, gender: String,brench: String,esteril: String,owner: String): Boolean {
+    fun updatePet(id: Int,name: String, age: Int, gender: String,brench: String,esteril: String,owner: String,talla:String): Boolean {
         var banderaCorrecto = false
         val dbHelper = DBHelper(context)
         val db = dbHelper.writableDatabase
         try {
-            db.execSQL("UPDATE $TABLE_PETS SET name = '$name', age = '$age', gender = '$gender',brench = '$brench',esteril = '$esteril',owner = '$owner' WHERE id = $id")
+            db.execSQL("UPDATE $TABLE_PETS SET name = '$name', age = '$age', gender = '$gender',brench = '$brench',esteril = '$esteril',owner = '$owner',talla = '$talla' WHERE id = $id")
             banderaCorrecto = true
 
         } catch (e: Exception) {

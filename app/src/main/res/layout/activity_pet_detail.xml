@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_blue"
+    android:backgroundTint="@color/background_color_blue"
     tools:context=".views.PetDetail">
 
     <ImageButton
@@ -16,7 +18,8 @@
         android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back" />
+        app:srcCompat="@drawable/ic_back"
+        app:tint="@color/black" />
 
     <TextView
         android:id="@+id/tvPetDetailName"
@@ -24,6 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
         android:textSize="@dimen/h4"
         app:layout_constraintStart_toEndOf="@+id/ibBackPetDetail"
         app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +54,8 @@
                 android:layout_height="175dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:src="@drawable/logo_ninos_sfondo" />
+                android:scaleType="fitXY"
+                android:src="@drawable/perrito" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -57,6 +63,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/secundary_color"
                 app:cardCornerRadius="15dp">
 
                 <TextView
@@ -66,6 +73,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/pet_brench"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -75,6 +83,7 @@
                     android:layout_marginStart="50dp"
                     android:layout_marginTop="10dp"
                     android:hint="Raza de la mascota"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -84,6 +93,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="40dp"
                     android:text="@string/pet_genger"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -93,6 +103,7 @@
                     android:layout_marginStart="65dp"
                     android:layout_marginTop="40dp"
                     android:hint="Genero mascota"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -102,6 +113,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="71dp"
                     android:text="@string/pet_esterilizado"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -111,6 +123,7 @@
                     android:layout_marginStart="96dp"
                     android:layout_marginTop="71dp"
                     android:hint="Esta estelirizado"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -120,6 +133,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="101dp"
                     android:text="Fecha de nacimiento:"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
                 <TextView
@@ -129,6 +143,7 @@
                     android:layout_marginStart="162dp"
                     android:layout_marginTop="101dp"
                     android:hint="Genero mascota"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/b1" />
 
             </androidx.cardview.widget.CardView>
@@ -147,6 +162,7 @@
                     android:layout_marginStart="8dp"
 
                     android:text="@string/desparacitaciones"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/h5" />
 
                 <ImageButton
@@ -157,16 +173,21 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="8dp"
                     android:backgroundTint="#02FFFFFF"
-                    android:src="@drawable/ic_add" />
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/black" />
             </LinearLayout>
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginTop="10dp">
+                android:background="@color/secundary_gray"
+                android:backgroundTint="@color/secundary_gray">
 
             </TableLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -181,6 +202,7 @@
                     android:layout_marginStart="8dp"
 
                     android:text="@string/vacunas"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/h5" />
 
                 <ImageButton
@@ -191,16 +213,18 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="8dp"
                     android:backgroundTint="#02FFFFFF"
-                    android:src="@drawable/ic_add" />
+                    android:src="@drawable/ic_add"
+                    app:tint="@color/black" />
             </LinearLayout>
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="10dp"
-                android:background="@color/principal_blue">
+                android:background="@color/secundary_gray">
 
             </TableLayout>
 

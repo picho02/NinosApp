@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="principal_blue">#00AEEF</color>
     <color name="secundary_color">#595f72</color>
-    <color name="background_color">#edfefe</color>
+    <color name="background_color_blue">#edfefe</color>
+    <color name="btn_green">#2cba4d</color>
+    <color name="btn_cancel">#FF9585</color>
+    <color name="secundary_gray">#B4B6BD</color>
 </resources>

@@ -15,12 +15,14 @@ class AddMember : AppCompatActivity() {
     private lateinit var binding: ActivityAddMemberBinding
     private var spinnerGenderPosition: String = ""
     private var spinnerEsterilPosition: String = ""
+    private var spinnerTallaPosition: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAddMemberBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val listaOpcionesgender = resources.getStringArray(R.array.gender_array)
         val listaOpcionesEsteril = resources.getStringArray(R.array.esteril_array)
+        val listaOpcionesTalla = resources.getStringArray(R.array.talla_array)
         val generos = ArrayAdapter<String>(
             this,
             android.R.layout.simple_spinner_dropdown_item, listaOpcionesgender
@@ -28,6 +30,10 @@ class AddMember : AppCompatActivity() {
         val esteril = ArrayAdapter<String>(
             this,
             android.R.layout.simple_spinner_dropdown_item, listaOpcionesEsteril
+        )
+        val talla = ArrayAdapter<String>(
+            this,
+            android.R.layout.simple_spinner_dropdown_item, listaOpcionesTalla
         )
 
 
@@ -70,6 +76,25 @@ class AddMember : AppCompatActivity() {
                 }
 
             }
+            spTalla.adapter = talla
+            spTalla.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(
+                    p0: AdapterView<*>?,
+                    p1: View?,
+                    posicion: Int,
+                    p3: Long
+                ) {
+                    if (posicion != 0)
+                        spinnerTallaPosition = listaOpcionesTalla[posicion]
+
+                }
+
+                override fun onNothingSelected(p0: AdapterView<*>?) {
+                    TODO("Not yet implemented")
+                }
+
+            }
 
         }
     }
@@ -93,13 +118,16 @@ class AddMember : AppCompatActivity() {
 
     fun click(view: View) {
         when (view.id) {
-            R.id.btnAddPet -> {
+            R.id.btnLostPetOwner -> {
                 if (validaCampo()) {
                     if (spinnerGenderPosition == "") {
                         Toast.makeText(this, getString(R.string.error_spgender), Toast.LENGTH_LONG)
                             .show()
                     } else if (spinnerEsterilPosition == "") {
                         Toast.makeText(this, getString(R.string.error_spesteril), Toast.LENGTH_LONG)
+                            .show()
+                    } else if (spinnerTallaPosition == "") {
+                        Toast.makeText(this, getString(R.string.error_sptalla), Toast.LENGTH_LONG)
                             .show()
                     } else {
                         val dbPets = DBPets(this)
@@ -110,7 +138,8 @@ class AddMember : AppCompatActivity() {
                                 spinnerGenderPosition,
                                 etBrench.text.toString(),
                                 spinnerEsterilPosition,
-                                "Usuario"
+                                "Usuario",
+                                spinnerTallaPosition
                             )
                             if (id > 0) {
                                 Toast.makeText(
