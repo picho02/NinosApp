@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Ninos App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="empty_home_txt">Agrega un nuevo integrante</string>
+    <string name="home_header">Manada</string>
+    <string name="add_pet">Agregar miembro</string>
+    <string name="title_activity_add_member">AddMember</string>
+    <string name="pet_name">Nombre</string>
+    <string name="pet_brench">Raza</string>
+    <string name="pet_genger">Genero</string>
+    <string name="pet_esterilizado">Esterilizado</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="sos_header">Ayudalos a volver a casa</string>
+    <string name="desparacitaciones">Desparacitaciones</string>
+    <string name="vacunas">Vacunas</string>
+    <string name="more_details">Mas detalles</string>
+    <string name="know_him">Conocelo</string>
+    <string name="age">Edad:</string>
+    <string name="owner">Dueño:</string>
+    <string name="talla">Talla:</string>
+    <string name="lost_date">Extraviado el:</string>
+    <string name="btn_owner_contact">Contacta al dueño</string>
+    <string name="btn_adopt">Adoptar</string>
+    <string name="adopt_new_member">Adopta un nuevo miembro</string>
+    <string-array name="gender_array">
+        <item>Seleccione un genero</item>
+        <item>Hembra</item>
+        <item>Macho</item>
+    </string-array>
+    <string-array name="esteril_array">
+        <item>Seleccione si esta esterilizado</item>
+        <item>Si</item>
+        <item>No</item>
+    </string-array>
+    <string name="valor_requerido">Ingrese un valor</string>
+    <string name="error_spgender">Seleccione un genero</string>
+    <string name="error_spesteril">Seleccione si esta esterilizado</string>
+    <string name="guardado">Se guardo con exito</string>
+    <string name="Error">Algo salio mal</string>
+
+</resources>

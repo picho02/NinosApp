@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1605" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1605" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_add_member.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_adoptable_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_lost_detail.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_pet_detail.xml" value="0.264" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/adopt_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/content_add_member.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_refugio.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_sos.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/home_element.xml" value="0.6" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/pet_element.xml" value="0.4" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/sos_element.xml" value="0.8800000000000001" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/menu/main_menu.xml" value="0.18802083333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
