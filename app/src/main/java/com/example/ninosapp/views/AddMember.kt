@@ -1,18 +1,34 @@
 package com.example.ninosapp.views
 
+import android.app.Activity
+import android.app.DatePickerDialog
+import android.app.Dialog
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.PackageManagerCompat
+import androidx.fragment.app.DialogFragment
 import com.example.ninosapp.R
 import com.example.ninosapp.databinding.ActivityAddMemberBinding
 import com.example.ninosapp.db.DBPets
+import java.util.*
+import java.util.jar.Manifest
 
 class AddMember : AppCompatActivity() {
+    private val GALERIA_REQUEST_CODE: Int = 22
+    private val PERMISO_GALERIA: Int = 98
+    private val CAMARA_REQUEST_CODE: Int = 23
+    private val PERMISO_CAMARA: Int = 99
     private lateinit var binding: ActivityAddMemberBinding
     private var spinnerGenderPosition: String = ""
     private var spinnerEsterilPosition: String = ""
@@ -21,6 +37,12 @@ class AddMember : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAddMemberBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.btnCamera.setOnClickListener {
+            solicitarPermisos()
+        }
+        binding.btnGaleria.setOnClickListener {
+            solicitarPermisosGaleria()
+        }
         val listaOpcionesgender = resources.getStringArray(R.array.gender_array)
         val listaOpcionesEsteril = resources.getStringArray(R.array.esteril_array)
         val listaOpcionesTalla = resources.getStringArray(R.array.talla_array)
@@ -39,6 +61,11 @@ class AddMember : AppCompatActivity() {
 
 
         with(binding) {
+            etAge.setOnClickListener {
+                val dialogFecha = DatePickerFragment{year, month, day -> mostrarResultado(year,month,day) }
+                dialogFecha.show(supportFragmentManager,"datePicker")
+
+            }
             spGender.adapter = generos
             spGender.onItemSelectedListener = object :
                 AdapterView.OnItemSelectedListener {
@@ -98,6 +125,100 @@ class AddMember : AppCompatActivity() {
             }
 
         }
+    }
+
+    private fun solicitarPermisos() {
+        when{
+            ContextCompat.checkSelfPermission(this,android.Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_GRANTED ->{
+                        tomarFoto()
+                    }
+            shouldShowRequestPermissionRationale(android.Manifest.permission.CAMERA)->{
+                mostrarMensajes("Permiso rechazado autorizar en ajustes")
+            }
+            else ->{
+                requestPermissions(arrayOf(android.Manifest.permission.CAMERA),PERMISO_CAMARA)
+            }
+        }
+    }
+    private fun solicitarPermisosGaleria() {
+        when{
+            ContextCompat.checkSelfPermission(this,android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED ->{
+                abrirGaleria()
+            }
+            shouldShowRequestPermissionRationale(android.Manifest.permission.READ_EXTERNAL_STORAGE)->{
+                mostrarMensajes("Permiso rechazado autorizar en ajustes")
+            }
+            else ->{
+                requestPermissions(arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),PERMISO_GALERIA)
+            }
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        when(requestCode){
+            PERMISO_CAMARA ->{
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    tomarFoto()
+                }
+            }
+            PERMISO_GALERIA -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    abrirGaleria()
+                }
+            }
+            else ->{
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+            }
+        }
+
+    }
+
+    private fun abrirGaleria() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*"
+        startActivityForResult(intent,GALERIA_REQUEST_CODE)
+    }
+
+    private fun tomarFoto() {
+        val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        startActivityForResult(intent,CAMARA_REQUEST_CODE)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when(requestCode){
+            CAMARA_REQUEST_CODE->{
+                if (resultCode != Activity.RESULT_OK){
+                    mostrarMensajes("No se tomo foto")
+                }else{
+                    val bitMap : Bitmap = data?.extras?.get("data") as Bitmap
+                    binding.iVAddPet.setImageBitmap(bitMap)
+                }
+            }
+            GALERIA_REQUEST_CODE->{
+                if (resultCode != Activity.RESULT_OK){
+                    mostrarMensajes("No se selecciono imagen")
+                }else{
+                    binding.iVAddPet.setImageURI(data?.data)
+                }
+            }
+        }
+    }
+
+    fun mostrarMensajes(mensaje:String){
+        Toast.makeText(this,"Permis", Toast.LENGTH_LONG).show()
+    }
+
+    private fun mostrarResultado(year: Int, month: Int, day: Int) {
+        binding.etAge.setText("$year/$month/$day")
+
+
     }
 
     private fun validaCampo(): Boolean {
@@ -178,6 +299,19 @@ class AddMember : AppCompatActivity() {
         super.onBackPressed()
         startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
+    class DatePickerFragment (val listener: (year: Int, month: Int,day:Int)->Unit): DialogFragment(), DatePickerDialog.OnDateSetListener{
+        override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+            val c = Calendar.getInstance()
+            var year = c.get(Calendar.YEAR)
+            var month = c.get(Calendar.MONTH)
+            var day = c.get(Calendar.DAY_OF_MONTH)
+            return DatePickerDialog(requireActivity(),this,year,month,day)
+        }
+        override fun onDateSet(p0: DatePicker?, year: Int, month: Int, day: Int) {
+            listener(year,month,day)
+        }
+
     }
 
 
