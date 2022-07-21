@@ -1,5 +1,6 @@
 package com.example.ninosapp.adapter
 
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,17 +9,20 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ninosapp.R
 import com.example.ninosapp.databinding.AdoptItemBinding
+import com.example.ninosapp.model.MascotaAdoptable
 import com.example.ninosapp.model.Pet
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 class AdoptAdapter(
-    val pets: ArrayList<Pet>,
+    val pets: ArrayList<MascotaAdoptable>,
     val onItemListener: AdoptAdapter.OnItemListener
     ): RecyclerView.Adapter<AdoptAdapter.ViewHolder>() {
     class ViewHolder(binding: AdoptItemBinding, onItemListener: OnItemListener) : RecyclerView.ViewHolder(binding.root),
         View.OnClickListener{
         private val binding = binding
         private val onItemListener = onItemListener
-        private lateinit var pet: Pet
+        private lateinit var pet: MascotaAdoptable
 
         init {
             binding.root.setOnClickListener(this)
@@ -28,11 +32,24 @@ class AdoptAdapter(
             onItemListener.onItemClick(pet)
         }
 
-        fun bindData(item: Pet) {
+        fun bindData(item: MascotaAdoptable) {
             with(binding) {
-                tvAdoptPetItemName.text = item.name
-                tvAdoptPetItemOwner.text = item.owner
+                tvAdoptPetItemName.text = item.nombre
+                tvAdoptPetItemOwner.text = item.idDuenio
+
+                if (item.sexo){
+                    ivAdoptPetItemGender.setImageResource(R.drawable.ic_male)
+                }else{
+                    ivAdoptPetItemGender.setImageResource(R.drawable.ic_female)
+                }
+                val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(item.foto)
+                val localfile = File.createTempFile("tmp","jpg")
+                storageRef.getFile(localfile).addOnSuccessListener {
+                    val bitMap = BitmapFactory.decodeFile(localfile.absolutePath)
+                    ivAdoptPetItem.setImageBitmap(bitMap)
+                }
             }
+
             pet = item
         }
 
@@ -54,6 +71,6 @@ class AdoptAdapter(
         return  pets.size
     }
     interface OnItemListener {
-        fun onItemClick(pet: Pet)
+        fun onItemClick(pet: MascotaAdoptable)
     }
 }

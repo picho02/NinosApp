@@ -47,5 +47,7 @@
     <string name="error_spesteril">Seleccione si esta esterilizado</string>
     <string name="guardado">Se guardo con exito</string>
     <string name="Error">Algo salio mal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

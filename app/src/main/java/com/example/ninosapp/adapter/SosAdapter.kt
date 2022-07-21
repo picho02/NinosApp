@@ -1,17 +1,22 @@
 package com.example.ninosapp.adapter
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ninosapp.R
 import com.example.ninosapp.databinding.HomeElementBinding
 import com.example.ninosapp.databinding.SosElementBinding
 import com.example.ninosapp.fragments.SosFragment
+import com.example.ninosapp.model.MascotaPerdida
 import com.example.ninosapp.model.Pet
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 class SosAdapter(private val context: Context,
-                 val pets: ArrayList<Pet>,
+                 val pets: ArrayList<MascotaPerdida>,
                  val onItemListener: SosFragment
 ) : RecyclerView.Adapter<SosAdapter.ViewHolder>() {
 
@@ -22,7 +27,7 @@ class SosAdapter(private val context: Context,
     }
 
     override fun onBindViewHolder(holder: SosAdapter.ViewHolder, position: Int) {
-        holder.bindData(pets[position])
+       holder.bindData(pets[position])
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +35,7 @@ class SosAdapter(private val context: Context,
     }
 
     interface OnItemListener {
-        fun onItemClick(pet: Pet)
+        fun onItemClick(pet: MascotaPerdida)
     }
 
     class ViewHolder(binding: SosElementBinding, onItemListener: OnItemListener) :
@@ -38,7 +43,7 @@ class SosAdapter(private val context: Context,
         View.OnClickListener {
         private val binding = binding
         private val onItemListener = onItemListener
-        private lateinit var pet: Pet
+        private lateinit var pet: MascotaPerdida
 
         init {
             binding.root.setOnClickListener(this)
@@ -48,11 +53,22 @@ class SosAdapter(private val context: Context,
             onItemListener.onItemClick(pet)
         }
 
-        fun bindData(item: Pet) {
+        fun bindData(item: MascotaPerdida) {
             with(binding) {
-                tvSOSName.text = item.name
-                tvSOSLocation.text = item.age.toString()
-                tvSOSDate.text = "Extraviado el : 20/12/2021"
+                tvSOSName.text = item.nombre
+                tvSOSLocation.text = item.lugarExtravio
+                tvSOSDate.text = item.fechaExtravio
+                if (item.sexo){
+                    sexoItemPerdido.setImageResource(R.drawable.ic_male)
+                }else{
+                    sexoItemPerdido.setImageResource(R.drawable.ic_female)
+                }
+                val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(item.foto)
+                val localfile = File.createTempFile("tmp","jpg")
+                storageRef.getFile(localfile).addOnSuccessListener {
+                    val bitMap = BitmapFactory.decodeFile(localfile.absolutePath)
+                    fotoItemPerdido.setImageBitmap(bitMap)
+                }
             }
             pet = item
         }

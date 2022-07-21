@@ -7,7 +7,7 @@ import com.example.ninosapp.model.Pet
 
 class DBPets (context: Context) : DBHelper(context) {
     //Aqui va el codigo para el crud
-    val context = context
+    /*val context = context
 
     fun insertPet(name: String, age: Int, gender: String,brench:String,esteril: String,owner: String,talla: String): Long {
         val dbHelper = DBHelper(context)
@@ -126,5 +126,5 @@ class DBPets (context: Context) : DBHelper(context) {
         return banderaCorrecto
     }
 
-
+*/
 }

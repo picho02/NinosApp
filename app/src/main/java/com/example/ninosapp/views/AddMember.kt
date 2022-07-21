@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import com.example.ninosapp.R
 import com.example.ninosapp.databinding.ActivityAddMemberBinding
 import com.example.ninosapp.db.DBPets
@@ -130,6 +131,7 @@ class AddMember : AppCompatActivity() {
                         Toast.makeText(this, getString(R.string.error_sptalla), Toast.LENGTH_LONG)
                             .show()
                     } else {
+                        /*
                         val dbPets = DBPets(this)
                         with(binding) {
                             val id = dbPets.insertPet(
@@ -158,7 +160,7 @@ class AddMember : AppCompatActivity() {
                             intent = Intent(this@AddMember, MainActivity::class.java)
                             startActivity(intent)
                             finish()
-                        }
+                        }*/
                     }
                 }
             }

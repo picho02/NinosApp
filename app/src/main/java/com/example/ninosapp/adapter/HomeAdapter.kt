@@ -1,12 +1,15 @@
 package com.example.ninosapp.adapter
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ninosapp.databinding.HomeElementBinding
 import com.example.ninosapp.model.Pet
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 class HomeAdapter(private val context: Context,
                   val pets: ArrayList<Pet>,
@@ -48,8 +51,15 @@ class HomeAdapter(private val context: Context,
 
         fun bindData(item: Pet) {
             with(binding) {
-                tvHomeName.text = item.name
-                tvHomeAge.text = item.age.toString()
+                tvHomeName.text = item.nombre
+                tvHomeAge.text = item.nacimiento
+                val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(item.foto)
+                val localfile = File.createTempFile("tmp","jpg")
+                storageRef.getFile(localfile).addOnSuccessListener {
+                    val bitMap = BitmapFactory.decodeFile(localfile.absolutePath)
+                    ivHomeElement.setImageBitmap(bitMap)
+                }
+
             }
             pet = item
         }

@@ -6,7 +6,8 @@
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1605" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1605" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_add_member.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_adoptable_detail.xml" value="0.536" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_adoptable_detail.xml" value="0.333021515434986" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_login.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_lost_detail.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_pet_detail.xml" value="0.264" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/adopt_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/content_add_member.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_no_internet.xml" value="0.3625" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_refugio.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_sos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/home_element.xml" value="0.7069510268562401" />

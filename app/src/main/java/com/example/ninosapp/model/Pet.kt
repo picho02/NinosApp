@@ -2,5 +2,6 @@ package com.example.ninosapp.model
 
 import java.io.Serializable
 
-data class Pet(var id: Int, var name: String, var age: Int,var gender: String,var brench: String,var esteril: String,var owner: String, var talla:String):
+data class  Pet(var idDuenio:String, var idMascota: String, var nombre: String,var nacimiento: String,var sexo: Boolean,var raza: String,var esterilizado: Boolean
+                ,var talla: String, var foto: String, var extraviado: Boolean):
     Serializable

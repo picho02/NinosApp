@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "578520444079",
+    "project_id": "ninosapp-71588",
+    "storage_bucket": "ninosapp-71588.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578520444079:android:3b434a765cf7c7e093f85a",
+        "android_client_info": {
+          "package_name": "com.example.ninosapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578520444079-csulei74a5krmvqriovvjnnlcd56th2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUf8nIWtxZVGSkiOrumA-xDoTgUPbP7u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578520444079-csulei74a5krmvqriovvjnnlcd56th2n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "578520444079-na6mdt55n6r9bjjifsp94vcobh36ip5s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "cruz.edgar.NinosApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

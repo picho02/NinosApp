@@ -26,7 +26,7 @@ class PetDetail : AppCompatActivity() {
                 id = savedInstanceState?.getSerializable("ID") as Int
             }
             dbPets = DBPets(this)
-            pet = dbPets.getPet(id)
+            /*pet = dbPets.getPet(id)
             if (pet != null){
                 with(binding){
                     tvPetDetailName.setText(pet?.name)
@@ -35,7 +35,7 @@ class PetDetail : AppCompatActivity() {
                     tvPetDetailEsteril.setText(pet?.esteril)
                     tvPetDetailGender.setText(pet?.gender)
                 }
-            }
+            }*/
         }
     }
     fun click(view: View) {

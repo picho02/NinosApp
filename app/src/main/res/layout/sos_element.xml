@@ -15,7 +15,7 @@
         android:background="@color/secundary_color">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/sexoItemPerdido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -61,7 +61,7 @@
             app:layout_constraintGuide_percent="0.3" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/fotoItemPerdido"
             android:layout_width="96dp"
             android:layout_height="81dp"
 
@@ -93,7 +93,7 @@
             android:textSize="22sp"
             android:textStyle="bold|italic"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
-            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintEnd_toStartOf="@+id/sexoItemPerdido"
             app:layout_constraintStart_toStartOf="@+id/guideline7"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             tools:text="Nombre" />

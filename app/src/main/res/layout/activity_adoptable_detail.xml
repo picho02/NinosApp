@@ -51,6 +51,7 @@
             android:orientation="vertical">
 
             <ImageView
+                android:id="@+id/fotoAdoptable"
                 android:layout_width="match_parent"
                 android:layout_height="175dp"
                 android:layout_marginStart="8dp"
@@ -232,6 +233,7 @@
                 android:textSize="@dimen/h5" />
 
             <TextView
+                android:id="@+id/detalleAdoptable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -240,6 +242,36 @@
                 android:hint="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
                 android:textColor="@color/black"
                 android:textSize="@dimen/b1" />
+            <TextView
+                android:id="@+id/sociableTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:hint="Sociable"
+                android:textColor="@color/black"
+                android:textSize="@dimen/b1" />
+            <TextView
+                android:id="@+id/ejercicioTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:hint="ejercicio"
+                android:textColor="@color/black"
+                android:textSize="@dimen/b1"/>
+            <TextView
+                android:id="@+id/energiaTV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:hint="energia"
+                android:textColor="@color/black"
+                android:textSize="@dimen/b1"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAdopt"
