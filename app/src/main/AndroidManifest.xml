@@ -5,8 +5,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NinosApp">
         <activity
+            android:name=".AgregarVacuna"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarDesparacitada"
+            android:exported="false" />
+        <activity
+            android:name=".ReporteExtravio"
+            android:exported="false" />
+        <activity
             android:name=".RegistrarseActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -23,23 +32,23 @@
         <activity
             android:name=".Login"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.LostDetail"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.AdoptableDetail"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.PetDetail"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.AddMember"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.SplashScreen"
             android:exported="true"
@@ -53,7 +62,7 @@
         <activity
             android:name=".views.MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

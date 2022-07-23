@@ -7,10 +7,14 @@
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1605" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_add_member.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_adoptable_detail.xml" value="0.333021515434986" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_agregar_desparacitada.xml" value="0.3625" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_agregar_vacuna.xml" value="0.2296875" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_login.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_lost_detail.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_pet_detail.xml" value="0.264" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_registrarse.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_reporte_extravio.xml" value="0.3625" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/adopt_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/content_add_member.xml" value="0.36666666666666664" />
@@ -19,6 +23,7 @@
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_refugio.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/fragment_sos.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/home_element.xml" value="0.7069510268562401" />
+        <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/item_lista.xml" value="0.3614583333333333" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/pet_element.xml" value="0.4" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/layout/sos_element.xml" value="0.47186147186147187" />
         <entry key="..\:/Users/eder_/Documents/Diplomado/NinosApp/app/src/main/res/menu/main_menu.xml" value="0.18802083333333333" />

@@ -28,6 +28,11 @@
         <item>Hembra</item>
         <item>Macho</item>
     </string-array>
+    <string-array name="tipo_desparacitada">
+        <item>Seleccione el tipo de desparacitación </item>
+        <item>Interna</item>
+        <item>Externa</item>
+    </string-array>
     <string-array name="esteril_array">
         <item>Seleccione si esta esterilizado</item>
         <item>Si</item>

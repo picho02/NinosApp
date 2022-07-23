@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils.replace
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isInvisible
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         var sosFragment = SosFragment()
         var refugioFragment = RefugioFragment()
         var noInternetFragment = NoInternet()
-        var currentFragment = sosFragment
+        var currentFragment = homeFragment
 
 
         val networkConnection = NetworkConnection(applicationContext)
@@ -78,6 +79,7 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("Salir",DialogInterface.OnClickListener { dialogInterface, i ->
                         auth.signOut()
                         binding.logBtn.setImageResource(R.drawable.ic_login)
+                        setCurrentFragment(sosFragment)
                     }).setNegativeButton("No",DialogInterface.OnClickListener { dialogInterface, i ->
 
                     }).show()
